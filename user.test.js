@@ -5,4 +5,7 @@ test("return a user object", () => {
     id: 1,
     email: `user1@test.com`,
   });
+  expect(getUser(2).email).toMatch(/.*test.com$/);
+  expect(() => getUser(-1)).toThrow();
+  expect(() => getUser(-1)).toThrow("Invalid ID");
 });
